@@ -1,5 +1,5 @@
 import { useThemeColor } from "@/hooks/useThemeColor";
-import { FontAwesome, AntDesign, MaterialIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import { Stack, Tabs } from "expo-router";
 import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
@@ -20,7 +20,7 @@ export default function RootLayout() {
         name="index"
         options={{
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="home" color={color} />
+            <AntDesign size={28} name="home" color={color} />
           ),
           // tabBarBadge: "",
           // tabBarBadgeStyle: styles.tabBarBadgeStyle,
@@ -31,7 +31,7 @@ export default function RootLayout() {
         name="recent"
         options={{
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={24} name="calendar-o" color={color} />
+            <AntDesign size={24} name="clockcircleo" color={color} />
           ),
         }}
       />
@@ -39,7 +39,7 @@ export default function RootLayout() {
         name="favourite"
         options={{
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={24} name="heart-o" color={color} />
+            <AntDesign size={24} name="hearto" color={color} />
           ),
         }}
       />
@@ -48,7 +48,7 @@ export default function RootLayout() {
         name="account"
         options={{
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={24} name="user-o" color={color} />
+            <AntDesign size={24} name="user" color={color} />
           ),
         }}
       />
