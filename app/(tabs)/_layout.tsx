@@ -1,11 +1,19 @@
-import { useThemeColor } from "@/hooks/useThemeColor";
-import { AntDesign } from "@expo/vector-icons";
+
 import { Stack, Tabs } from "expo-router";
 import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
+import { RenderIcon } from 'icon-lib'
 
 
+
+
+
+
+import 'react-native-get-random-values'
+import { nanoid } from 'nanoid'
 export default function RootLayout() {
+  // console.log(nanoid(), multiply(2, 3).then((e) => console.log(e)));
+
   return (
     <Tabs
       screenOptions={{
@@ -13,14 +21,16 @@ export default function RootLayout() {
         tabBarActiveTintColor: "#2F2F2F",
         tabBarInactiveTintColor: "#848282",
         headerShown: false,
-        tabBarStyle: styles.tabBarStyle,
+        tabBarStyle: styles.tabBarStyle
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           tabBarIcon: ({ color }) => (
-            <AntDesign size={28} name="home" color={color} />
+            // <AntDesign size={28} name="home" color={color} />
+            <RenderIcon name="house-medical-light" color={color} size={24} />
+
           ),
           // tabBarBadge: "",
           // tabBarBadgeStyle: styles.tabBarBadgeStyle,
@@ -31,7 +41,9 @@ export default function RootLayout() {
         name="recent"
         options={{
           tabBarIcon: ({ color }) => (
-            <AntDesign size={24} name="clockcircleo" color={color} />
+            // <AntDesign size={24} name="clockcircleo" color={color} />
+            <RenderIcon name="clock-light" color={color} size={24} />
+            // 
           ),
         }}
       />
@@ -39,7 +51,7 @@ export default function RootLayout() {
         name="favourite"
         options={{
           tabBarIcon: ({ color }) => (
-            <AntDesign size={24} name="hearto" color={color} />
+            <RenderIcon size={24} name="heart-light" color={color} />
           ),
         }}
       />
@@ -48,7 +60,7 @@ export default function RootLayout() {
         name="account"
         options={{
           tabBarIcon: ({ color }) => (
-            <AntDesign size={24} name="user" color={color} />
+            <RenderIcon size={24} name="user-light" color={color} />
           ),
         }}
       />
