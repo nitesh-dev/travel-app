@@ -29,7 +29,7 @@ export default function RootLayout() {
         options={{
           tabBarIcon: ({ color }) => (
             // <AntDesign size={28} name="home" color={color} />
-            <RenderIcon name="house-medical-light" color={color} size={24} />
+            <RenderIcon name="house-light" color={color} size={24} />
 
           ),
           // tabBarBadge: "",
@@ -71,9 +71,10 @@ export default function RootLayout() {
 const styles = StyleSheet.create({
   tabBarStyle: {
     position: "absolute",
-    bottom: 10,
+    bottom: 0,
+    height: 60,
     elevation: 0,
-    backgroundColor: "transparent",
+    backgroundColor: "white",
     borderTopColor: "transparent",
   },
   tabBarBadgeStyle: {

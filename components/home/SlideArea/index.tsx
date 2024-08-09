@@ -1,12 +1,13 @@
 import Common from "@/constants/constants";
 import globalStyles from "@/styles/global";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
+import SlideAreaCard from "./SlideAreaCard";
 
 export default function SlideArea() {
 
     return <View style={styles.slideArea}>
-        <ScrollView style={globalStyles.safeArea} horizontal showsHorizontalScrollIndicator={false}>
-            <View style={styles.header}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <View style={[styles.header, globalStyles.safeArea]}>
                 <View style={[styles.headerItem, styles.headerItemActive]}>
                     <Text style={[globalStyles.p, styles.headerItemActiveText]}>Popular</Text>
                 </View>
@@ -17,6 +18,16 @@ export default function SlideArea() {
                     <Text style={globalStyles.p}>Most visited</Text>
                 </View>
             </View>
+        </ScrollView>
+
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <View style={[styles.cardHolder, globalStyles.safeArea]}>
+                <SlideAreaCard img={require("@/assets/images/home/img1.png")} />
+                <SlideAreaCard img={require("@/assets/images/home/img2.png")} />
+                <SlideAreaCard img={require("@/assets/images/home/img1.png")} />
+                <SlideAreaCard img={require("@/assets/images/home/img2.png")} />
+            </View>
+
         </ScrollView>
     </View>
 
@@ -33,7 +44,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginVertical: 20,
         gap: 10,
-        overflow: "scroll"
     },
     headerItem: {
         height: 50,
@@ -49,5 +59,12 @@ const styles = StyleSheet.create({
     },
     headerItemActiveText: {
         color: "white"
+    },
+    cardHolder: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        marginVertical: 10,
+        gap: 20,
     }
 })
